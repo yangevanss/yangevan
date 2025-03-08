@@ -43,7 +43,7 @@ function App() {
                     </div>
                     <div>
                       <p className="text-muted-foreground">
-                        喜歡開發美觀的使用介面，思考使用者體驗，以及追尋前端最新技術。
+                        喜歡開發美觀的使用介面，思考使用者體驗，以及追尋最新技術。
                       </p>
                     </div>
                   </div>
@@ -267,6 +267,32 @@ function App() {
                         <div className="tracking-wide">Webpack, Rollup</div>
                       </li>
                     </ul>
+                  </div>
+                </section>
+
+                <section className="flex flex-col gap-8">
+                  <p className="font-serif font-medium">Contact</p>
+                  <div className="flex flex-col items-start gap-2">
+                    <Button variant="link" asChild>
+                      <a
+                        href="https://github.com/yangevanss"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="p-0!"
+                      >
+                        Github
+                      </a>
+                    </Button>
+                    <Button variant="link" asChild>
+                      <a
+                        href="mailto:yangevanss@gmail.com"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="p-0!"
+                      >
+                        yangevanss@gmail.com
+                      </a>
+                    </Button>
                   </div>
                 </section>
               </div>
