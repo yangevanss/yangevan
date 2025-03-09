@@ -15,7 +15,7 @@
   --card-foreground: oklch(0.18 0.003 162);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.18 0.003 162);
-  --primary: oklch(0.85 0.07 56.45);
+  --primary: oklch(72.92% 0.195 60.79);
   --primary-foreground: oklch(0.2 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
@@ -134,7 +134,7 @@
 }
 
 @utility dark-fresnel {
-  @apply relative dark:before:pointer-events-none dark:before:absolute dark:before:-inset-px dark:before:rounded-[inherit] dark:before:shadow-[0px_1px_0px_0px_rgba(255,_255,_255,_0.06)_inset];
+  @apply relative dark:before:pointer-events-none dark:before:absolute dark:before:-inset-px dark:before:rounded-[inherit] dark:before:shadow-[0px_1px_0px_0px_rgba(255,_255,_255,_0.06)_inset,1px_0px_0px_0px_rgba(255,_255,_255,_0.03)_inset];
 }
 
 @layer base {
