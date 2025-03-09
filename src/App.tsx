@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
@@ -9,11 +11,32 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+
+import { Keynote } from "@/components/Keynote";
 
 import noise from "@/assets/noise.webp";
 import avatar from "@/assets/avatar.webp";
 
 function App() {
+  const [openKeynote, setOpenKeynote] = useState(true);
+
+  useEffect(() => {
+    const keydownHandler = (e: KeyboardEvent) => {
+      if (e.metaKey && e.key === "k" && !e.repeat) {
+        e.preventDefault();
+
+        setOpenKeynote((prev) => !prev);
+      }
+    };
+
+    window.addEventListener("keydown", keydownHandler);
+
+    return () => {
+      window.removeEventListener("keydown", keydownHandler);
+    };
+  }, []);
+
   return (
     <>
       <span
@@ -266,6 +289,11 @@ function App() {
           </div>
         </div>
       </ScrollArea>
+      <Dialog open={openKeynote} onOpenChange={setOpenKeynote}>
+        <DialogContent className="w-auto! max-w-full! focus-visible:outline-none">
+          <Keynote></Keynote>
+        </DialogContent>
+      </Dialog>
     </>
   );
 }
