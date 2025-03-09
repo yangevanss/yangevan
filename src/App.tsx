@@ -19,7 +19,7 @@ import noise from "@/assets/noise.webp";
 import avatar from "@/assets/avatar.webp";
 
 function App() {
-  const [openKeynote, setOpenKeynote] = useState(true);
+  const [openKeynote, setOpenKeynote] = useState(false);
 
   useEffect(() => {
     const keydownHandler = (e: KeyboardEvent) => {
