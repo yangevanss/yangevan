@@ -32,7 +32,7 @@ export function Section4({ isActive }: { isActive: boolean }) {
   return (
     <section className="flex size-full flex-col overflow-auto px-[2em] text-left">
       <div className="py-[2em]">
-        <p className="text-[3em]">CATCHPLAY</p>
+        <p className="text-[2.5em]">CATCHPLAY</p>
       </div>
       <Separator variant="gradient"></Separator>
       <ScrollArea>
@@ -41,8 +41,12 @@ export function Section4({ isActive }: { isActive: boolean }) {
             <p className="text-[1.875em]">網站效能改進</p>
             <ul className="flex flex-col gap-[0.5em] text-[1.6em]">
               <li className="text-primary">整體程式碼減少大約 50%</li>
-              <li>Core Web Vitals (Desktop)</li>
-              <li>Core Web Vitals (Mobile)</li>
+              <li className="text-muted-foreground">
+                Core Web Vitals (Desktop)
+              </li>
+              <li className="text-muted-foreground">
+                Core Web Vitals (Mobile)
+              </li>
             </ul>
           </div>
           <div className="flex-1">

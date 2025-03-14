@@ -290,7 +290,7 @@ function App() {
         </div>
       </ScrollArea>
       <Dialog open={openKeynote} onOpenChange={setOpenKeynote}>
-        <DialogContent className="w-auto! max-w-full! focus-visible:outline-none">
+        <DialogContent className="w-full! max-w-[90cqmax]! focus-visible:outline-none">
           <Keynote></Keynote>
         </DialogContent>
       </Dialog>

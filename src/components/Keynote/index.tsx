@@ -8,6 +8,20 @@ import { cn } from "@/utils/cn";
 
 import * as Sections from "./components/sections";
 
+const SectionComponents = Object.values(Sections).sort((a, b) => {
+  const getNumberFromName = (name: string) => {
+    const match = name.match(/Section(\d+)/);
+
+    return match ? parseInt(match[1], 10) : 0;
+  };
+
+  const numA = getNumberFromName(a.name);
+
+  const numB = getNumberFromName(b.name);
+
+  return numA - numB;
+});
+
 export function Keynote() {
   const [emblaMainRef, emblaMainApi] = useEmblaCarousel({}, [Fade()]);
 
@@ -70,14 +84,14 @@ export function Keynote() {
   }, [emblaMainApi]);
 
   return (
-    <div className="relative">
-      <div className="embla h-[75cqmin] w-[90cqmax] min-w-[1200px] select-none">
+    <div className="relative w-full overflow-hidden">
+      <div className="embla h-[75cqmin] w-full select-none">
         <div
           ref={emblaMainRef}
           className="embla__viewport size-full overflow-hidden"
         >
           <div className="embla__container flex size-full touch-pan-y touch-pinch-zoom">
-            {Object.values(Sections).map((Section, index) => (
+            {SectionComponents.map((Section, index) => (
               <div
                 key={index}
                 className="embla__slide size-full min-w-0 shrink-0 grow-0 text-[1.5cqmin]"
@@ -88,13 +102,13 @@ export function Keynote() {
           </div>
         </div>
       </div>
-      <div className="embla-thumbs w-full select-none">
+      <div className="embla-thumbs sticky top-0 left-0 w-full select-none">
         <div
           ref={emblaThumbsRef}
           className="embla-thumbs__viewport overflow-hidden"
         >
           <div className="embla-thumbs__container flex gap-4">
-            {Object.values(Sections).map((Section, index) => (
+            {SectionComponents.map((Section, index) => (
               <button
                 key={index}
                 className={cn(

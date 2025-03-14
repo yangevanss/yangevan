@@ -58,7 +58,7 @@ export function Section6({ isActive }: { isActive: boolean }) {
   return (
     <section className="flex size-full flex-col overflow-auto px-[2em] text-left">
       <div className="py-[2em]">
-        <p className="text-[3em]">CATCHPLAY</p>
+        <p className="text-[2.5em]">CATCHPLAY</p>
       </div>
       <Separator variant="gradient"></Separator>
       <ScrollArea>
@@ -66,8 +66,10 @@ export function Section6({ isActive }: { isActive: boolean }) {
           <div className="flex w-1/3 shrink-0 flex-col gap-[2em]">
             <p className="text-[1.875em]">網站效能改進</p>
             <ul className="flex flex-col gap-[0.5em] text-[1.6em]">
-              <li>整體程式碼減少大約 50%</li>
-              <li>Core Web Vitals (Desktop)</li>
+              <li className="text-muted-foreground">整體程式碼減少大約 50%</li>
+              <li className="text-muted-foreground">
+                Core Web Vitals (Desktop)
+              </li>
               <li className="text-primary">Core Web Vitals (Mobile)</li>
             </ul>
           </div>
