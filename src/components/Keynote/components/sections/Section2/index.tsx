@@ -1,6 +1,8 @@
 import { Separator } from "@/components/ui/separator";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
+import bg from "./assets/bg.webm";
+
 export function Section2({ isActive }: { isActive: boolean }) {
   return (
     <section className="flex size-full flex-col overflow-auto px-[2em] text-left">
@@ -18,8 +20,19 @@ export function Section2({ isActive }: { isActive: boolean }) {
               <li className="text-muted-foreground">Fanloop 網站</li>
             </ul>
           </div>
-          <div className="flex-1">
-            {/* <img src={img1} className="h-full object-cover" /> */}
+          <div className="relative flex-1">
+            <div className="w-full overflow-hidden rounded-[1.5em]">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                controls={isActive}
+                className="w-full object-cover"
+              >
+                <source src={bg} type="video/webm" />
+              </video>
+            </div>
           </div>
         </div>
       </ScrollArea>

@@ -1,7 +1,7 @@
 import { Separator } from "@/components/ui/separator";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
-import img1 from "./assets/img-1.webp";
+import bg from "./assets/bg.webm";
 
 export function Section1({ isActive }: { isActive: boolean }) {
   return (
@@ -21,7 +21,18 @@ export function Section1({ isActive }: { isActive: boolean }) {
             </ul>
           </div>
           <div className="flex-1">
-            <img src={img1} className="h-full rounded-[1em] object-cover" />
+            <div className="w-full overflow-hidden rounded-[1.5em]">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                controls={isActive}
+                className="w-full object-cover"
+              >
+                <source src={bg} type="video/webm" />
+              </video>
+            </div>
           </div>
         </div>
       </ScrollArea>
