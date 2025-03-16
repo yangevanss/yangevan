@@ -1,21 +1,35 @@
-export { Section1 } from "./Section1";
+import { Section1 } from "./Section1";
 
-export { Section2 } from "./Section2";
+import { Section2 } from "./Section2";
 
-export { Section3 } from "./Section3";
+import { Section3 } from "./Section3";
 
-export { Section4 } from "./Section4";
+import { Section4 } from "./Section4";
 
-export { Section5 } from "./Section5";
+import { Section5 } from "./Section5";
 
-export { Section6 } from "./Section6";
+import { Section6 } from "./Section6";
 
-export { Section7 } from "./Section7";
+import { Section7 } from "./Section7";
 
-export { Section8 } from "./Section8";
+import { Section8 } from "./Section8";
 
-export { Section9 } from "./Section9";
+import { Section9 } from "./Section9";
 
-export { Section10 } from "./Section10";
+import { Section10 } from "./Section10";
 
-export { Section11 } from "./Section11";
+import { Section11 } from "./Section11";
+
+export default [
+  Section1,
+  Section2,
+  Section3,
+  Section4,
+  Section5,
+  Section6,
+  Section7,
+  Section8,
+  Section9,
+  Section10,
+  Section11,
+];
