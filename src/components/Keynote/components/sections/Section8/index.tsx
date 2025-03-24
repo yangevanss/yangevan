@@ -14,7 +14,7 @@ export function Section8({ isActive }: { isActive: boolean }) {
       </div>
       <Separator variant="gradient"></Separator>
       <ScrollArea className="h-full">
-        <div className="absolute top-0 left-0 h-full w-full perspective-[4000px] perspective-origin-[100%_0] transform-3d after:absolute after:inset-0 after:translate-z-[1000px] after:bg-[linear-gradient(to_right,transparent_80%,var(--background)_100%),linear-gradient(to_bottom,transparent_0%,var(--background)_100%)]">
+        <div className="absolute top-0 left-0 h-full w-full perspective-[4000px] perspective-origin-[100%_0] transform-3d after:absolute after:inset-0 after:translate-x-0 after:translate-y-0 after:translate-z-[1000px] after:bg-[linear-gradient(to_right,transparent_80%,var(--background)_100%),linear-gradient(to_bottom,transparent_0%,var(--background)_100%)]">
           <div
             className="origin-top-left transform-3d"
             style={{
@@ -24,7 +24,7 @@ export function Section8({ isActive }: { isActive: boolean }) {
           >
             <div
               className={cn(
-                "size-full translate-z-[300px] opacity-0 blur-2xl",
+                "size-full translate-x-0 translate-y-0 translate-z-[300px] opacity-0 blur-2xl",
                 {
                   "translate-z-0 opacity-100 blur-none transition-all duration-[1s]":
                     isActive,
@@ -39,7 +39,7 @@ export function Section8({ isActive }: { isActive: boolean }) {
             </div>
             <div
               className={cn(
-                "absolute top-0 left-0 size-full translate-z-[300px] opacity-0 blur-2xl",
+                "absolute top-0 left-0 size-full translate-x-0 translate-y-0 translate-z-[300px] opacity-0 blur-2xl",
                 {
                   "translate-z-0 opacity-100 blur-none transition-all delay-[0.3s] duration-[1s]":
                     isActive,
