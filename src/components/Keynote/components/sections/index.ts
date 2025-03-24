@@ -20,6 +20,8 @@ import { Section10 } from "./Section10";
 
 import { Section11 } from "./Section11";
 
+import { Section12 } from "./Section12";
+
 export default [
   Section1,
   Section2,
@@ -27,6 +29,7 @@ export default [
   Section4,
   Section5,
   Section6,
+  Section12,
   Section7,
   Section8,
   Section9,
