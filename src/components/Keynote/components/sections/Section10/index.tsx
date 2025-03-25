@@ -3,6 +3,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { cn } from "@/utils/cn";
 
+import qr from "@/assets/qr-1.png";
 import bg1 from "./assets/bg-1.webp";
 import bg2 from "./assets/bg-2.webp";
 
@@ -62,6 +63,11 @@ export function Section10({ isActive }: { isActive: boolean }) {
               <li className="text-muted-foreground">圖片</li>
               <li className="text-primary">顏色</li>
             </ul>
+            <div className="w-[12em]">
+              <AspectRatio ratio={1 / 1}>
+                <img src={qr} className="w-full" />
+              </AspectRatio>
+            </div>
           </div>
         </div>
       </ScrollArea>
