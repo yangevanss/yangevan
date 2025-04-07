@@ -15,7 +15,7 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 import { Keynote } from "@/components/Keynote";
 
-import noise from "@/assets/noise.webp";
+// import noise from "@/assets/noise.webp";
 import avatar from "@/assets/avatar.webp";
 
 function App() {
