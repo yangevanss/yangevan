@@ -39,12 +39,12 @@ function App() {
 
   return (
     <>
-      <span
+      {/* <span
         className="pointer-events-none fixed inset-0 mix-blend-hard-light"
         style={{
           backgroundImage: `url(${noise})`,
         }}
-      ></span>
+      ></span> */}
       <ScrollArea>
         <div className="h-screen">
           <div className="pt-20 pb-40">
