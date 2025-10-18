@@ -1,42 +1,23 @@
-import { useState, useEffect } from "react";
+import { Squircle } from "@squircle-js/react";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
 
-import { Keynote } from "@/components/Keynote";
+import {
+  Item,
+  ItemContent,
+  ItemDescription,
+  ItemTitle,
+  ItemActions,
+} from "@/components/ui/item";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 // import noise from "@/assets/noise.webp";
 import avatar from "@/assets/avatar.webp";
 
 function App() {
-  const [openKeynote, setOpenKeynote] = useState(false);
-
-  useEffect(() => {
-    const keydownHandler = (e: KeyboardEvent) => {
-      if (e.metaKey && e.key === "k" && !e.repeat) {
-        e.preventDefault();
-
-        setOpenKeynote((prev) => !prev);
-      }
-    };
-
-    window.addEventListener("keydown", keydownHandler);
-
-    return () => {
-      window.removeEventListener("keydown", keydownHandler);
-    };
-  }, []);
-
   return (
     <>
       {/* <span
@@ -50,11 +31,13 @@ function App() {
           <div className="pt-20 pb-40">
             <div className="container max-w-2xl">
               <div>
-                <div className="flex gap-4">
-                  <Avatar>
-                    <AvatarImage src={avatar} alt="Evan Yang" />
-                    <AvatarFallback>EY</AvatarFallback>
-                  </Avatar>
+                <div className="flex items-start gap-4">
+                  <Squircle cornerRadius={6} cornerSmoothing={1}>
+                    <Avatar className="rounded-none">
+                      <AvatarImage src={avatar} alt="Evan Yang" />
+                      <AvatarFallback>EY</AvatarFallback>
+                    </Avatar>
+                  </Squircle>
                   <div className="flex flex-col gap-6">
                     <div className="font-medium">
                       <h1 className="leading-none">Evan Yang</h1>
@@ -62,7 +45,8 @@ function App() {
                     </div>
                     <div>
                       <p className="text-muted-foreground">
-                        喜歡開發美觀的使用介面，思考使用者體驗，以及追尋最新技術。
+                        Enjoy building beautiful user interfaces, thinking about
+                        user experience, and exploring the latest technologies.
                       </p>
                     </div>
                   </div>
@@ -74,16 +58,16 @@ function App() {
 
               <div className="flex flex-col gap-32">
                 <section className="flex flex-col gap-8">
-                  <p className="font-serif font-medium">Experience</p>
+                  <p className="font-medium">Experience</p>
                   <div className="relative">
                     <span className="bg-foreground/30 absolute top-1 left-1.5 z-[-1] h-full w-[1px] [mask-image:linear-gradient(to_bottom,#fff,#fff_60%,transparent_100%)]"></span>
-                    <ul className="flex flex-col gap-6">
+                    <ul className="flex flex-col gap-8">
                       <li className="flex items-start gap-10">
-                        <div className="text-muted-foreground before:bg-secondary flex items-start gap-4 text-sm font-medium whitespace-nowrap before:mt-1 before:block before:size-3 before:rounded-full before:border">
-                          - 2025
+                        <div className="text-muted-foreground before:bg-primary before:border-primary flex w-1/7 shrink-0 items-start gap-4 text-sm font-medium whitespace-nowrap before:mt-1 before:block before:size-3 before:shrink-0 before:rounded-full before:border">
+                          Now
                         </div>
                         <div className="flex w-full flex-col gap-4">
-                          <div className="flex flex-col items-start gap-3">
+                          <div className="flex flex-col items-start gap-2">
                             <Button
                               variant="link"
                               size="icon"
@@ -91,30 +75,54 @@ function App() {
                               asChild
                             >
                               <a
-                                href="https://www.catchplay.com/"
+                                href="https://kkcompany.com"
+                                target="_blank"
+                                rel="noreferrer"
+                              >
+                                KKCompany
+                              </a>
+                            </Button>
+                            <p className="text-muted-foreground text-sm leading-relaxed">
+                              Developing and maintaining custom OTT streaming
+                              platforms.
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                      <li className="flex items-start gap-10">
+                        <div className="text-muted-foreground before:bg-secondary flex w-1/7 shrink-0 items-start gap-4 text-sm font-medium whitespace-nowrap before:mt-1 before:block before:size-3 before:shrink-0 before:rounded-full before:border">
+                          2025
+                        </div>
+                        <div className="flex w-full flex-col gap-4">
+                          <div className="flex flex-col items-start gap-2">
+                            <Button
+                              variant="link"
+                              size="icon"
+                              className="text-foreground flex size-auto justify-start text-base leading-none font-medium"
+                              asChild
+                            >
+                              <a
+                                href="https://www.catchplay.com"
                                 target="_blank"
                                 rel="noreferrer"
                               >
                                 CATCHPLAY
                               </a>
                             </Button>
-                            <div className="flex items-center gap-2">
-                              <Badge variant="outline">React</Badge>
-                              <Badge variant="outline">Next.js</Badge>
-                            </div>
                             <p className="text-muted-foreground text-sm leading-relaxed">
-                              負責影片播放器的開發與效能優化，以及網站日常重構與維護工作，同時也協助
-                              Fanloop 平台的開發專案。
+                              Responsible for video player development and
+                              optimization, CATCHPLAY website refactoring and
+                              maintenance, and Fanloop platform development.
                             </p>
                           </div>
                         </div>
                       </li>
                       <li className="flex items-start gap-10">
-                        <div className="text-muted-foreground before:bg-secondary flex items-start gap-4 text-sm font-medium whitespace-nowrap before:mt-1 before:block before:size-3 before:rounded-full before:border">
-                          - 2022
+                        <div className="text-muted-foreground before:bg-secondary flex w-1/7 shrink-0 items-start gap-4 text-sm font-medium whitespace-nowrap before:mt-1 before:block before:size-3 before:shrink-0 before:rounded-full before:border">
+                          2022
                         </div>
                         <div className="flex w-full flex-col gap-4">
-                          <div className="flex flex-col items-start gap-3">
+                          <div className="flex flex-col items-start gap-2">
                             <Button
                               variant="link"
                               size="icon"
@@ -122,22 +130,17 @@ function App() {
                               asChild
                             >
                               <a
-                                href="https://blockstudio.tw/"
+                                href="https://blockstudio.tw"
                                 target="_blank"
                                 rel="noreferrer"
                               >
                                 Block Studio
                               </a>
                             </Button>
-                            <div className="flex items-center gap-3">
-                              <Badge variant="outline">Vue.js</Badge>
-                              <Badge variant="outline">Nuxt</Badge>
-                              <Badge variant="outline">Wordpress</Badge>
-                            </div>
                             <p className="text-muted-foreground text-sm leading-relaxed">
-                              專注開發客製化動態網站，涵蓋前後端開發、網站效能與
-                              SEO
-                              優化等工作，同時負責維護客戶網站並提供定期更新服務。
+                              Developed custom dynamic websites, handled
+                              full-stack development, performance optimization,
+                              SEO, and ongoing maintenance.
                             </p>
                           </div>
                         </div>
@@ -147,55 +150,82 @@ function App() {
                 </section>
 
                 <section className="flex flex-col gap-8">
-                  <p className="font-serif font-medium">Projects</p>
+                  <p className="font-medium">Side Projects</p>
                   <div className="flex flex-col gap-6">
-                    <a
-                      href="https://www.convertors.app"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <Card className="hover:bg-muted transition-[background] duration-300">
-                        <CardHeader>
-                          <div className="flex flex-col gap-2">
-                            <CardTitle>Convertors</CardTitle>
-                            <CardDescription>
-                              快速、美觀、準確的轉換體驗
-                            </CardDescription>
-                          </div>
-                        </CardHeader>
-                      </Card>
-                    </a>
-                    <a
-                      href="https://chromewebstore.google.com/detail/translate-audio/biigkeablonfnliejoccopfpmeeobnmo"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <Card className="hover:bg-muted transition-[background] duration-300">
-                        <CardHeader>
-                          <div className="flex flex-col gap-2">
-                            <CardTitle>Translate Audio</CardTitle>
-                            <CardDescription>
-                              輕鬆翻譯網頁上的語音
-                            </CardDescription>
-                          </div>
-                        </CardHeader>
-                      </Card>
-                    </a>
+                    <Item variant="outline">
+                      <ItemContent>
+                        <ItemTitle>Mewdio</ItemTitle>
+                        <ItemDescription>
+                          A global online radio platform for everyone
+                        </ItemDescription>
+                      </ItemContent>
+                      <ItemActions>
+                        <Button variant="outline" size="sm" asChild>
+                          <a
+                            href="https://www.mewdio.app"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            Open
+                          </a>
+                        </Button>
+                      </ItemActions>
+                    </Item>
+
+                    <Item variant="outline">
+                      <ItemContent>
+                        <ItemTitle>Convertors</ItemTitle>
+                        <ItemDescription>
+                          Fast, Beautiful, and Accurate Conversion Experience
+                        </ItemDescription>
+                      </ItemContent>
+                      <ItemActions>
+                        <Button variant="outline" size="sm" asChild>
+                          <a
+                            href="https://www.convertors.app"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            Open
+                          </a>
+                        </Button>
+                      </ItemActions>
+                    </Item>
+
+                    <Item variant="outline">
+                      <ItemContent>
+                        <ItemTitle>Translate Audio</ItemTitle>
+                        <ItemDescription>
+                          Immediately translate website audio from any languages
+                        </ItemDescription>
+                      </ItemContent>
+                      <ItemActions>
+                        <Button variant="outline" size="sm" asChild>
+                          <a
+                            href="https://chromewebstore.google.com/detail/translate-audio/biigkeablonfnliejoccopfpmeeobnmo"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            Open
+                          </a>
+                        </Button>
+                      </ItemActions>
+                    </Item>
                   </div>
                 </section>
 
                 <section className="flex flex-col gap-8">
-                  <p className="font-serif font-medium">Tools</p>
+                  <p className="font-medium">Tools</p>
                   <div>
                     <Badge variant="outline" className="mb-4">
                       Now
                     </Badge>
-                    <ul className="flex flex-col gap-2 pl-1">
+                    <ul className="flex flex-col gap-1 pl-1">
                       <li className="flex gap-4">
                         <div className="text-muted-foreground min-w-[120px] font-medium">
                           Frontend
                         </div>
-                        <div className="tracking-wide">
+                        <div className="text-sm tracking-wide">
                           React, Next.js, Tailwind CSS
                         </div>
                       </li>
@@ -203,7 +233,7 @@ function App() {
                         <div className="text-muted-foreground min-w-[120px] font-medium">
                           Backend
                         </div>
-                        <div className="tracking-wide">
+                        <div className="text-sm tracking-wide">
                           Node.js, Payload, Supabase
                         </div>
                       </li>
@@ -211,35 +241,39 @@ function App() {
                         <div className="text-muted-foreground min-w-[120px] font-medium">
                           UI / Animation
                         </div>
-                        <div className="tracking-wide">shadcn/ui, motion</div>
+                        <div className="text-sm tracking-wide">
+                          shadcn/ui, motion
+                        </div>
                       </li>
                       <li className="flex gap-4">
                         <div className="text-muted-foreground min-w-[120px] font-medium">
                           Develop
                         </div>
-                        <div className="tracking-wide">
+                        <div className="text-sm tracking-wide">
                           Vite, Turborepo, Docker
                         </div>
                       </li>
                     </ul>
                   </div>
-                  <Separator variant="gradient"></Separator>
+                  <Separator></Separator>
                   <div>
                     <Badge variant="outline" className="mb-4">
                       Past
                     </Badge>
-                    <ul className="flex flex-col gap-2 pl-1">
+                    <ul className="flex flex-col gap-1 pl-1">
                       <li className="flex gap-4">
                         <div className="text-muted-foreground min-w-[120px] font-medium">
                           Frontend
                         </div>
-                        <div className="tracking-wide">Vue.js, Nuxt, Scss</div>
+                        <div className="text-sm tracking-wide">
+                          Vue.js, Nuxt, Scss
+                        </div>
                       </li>
                       <li className="flex gap-4">
                         <div className="text-muted-foreground min-w-[120px] font-medium">
                           Backend
                         </div>
-                        <div className="tracking-wide">
+                        <div className="text-sm tracking-wide">
                           PHP, Wordpress, Strapi
                         </div>
                       </li>
@@ -247,31 +281,25 @@ function App() {
                         <div className="text-muted-foreground min-w-[120px] font-medium">
                           UI / Animation
                         </div>
-                        <div className="tracking-wide">GSAP, Three.js</div>
+                        <div className="text-sm tracking-wide">
+                          GSAP, Three.js
+                        </div>
                       </li>
                       <li className="flex gap-4">
                         <div className="text-muted-foreground min-w-[120px] font-medium">
                           Develop
                         </div>
-                        <div className="tracking-wide">Webpack, Rollup</div>
+                        <div className="text-sm tracking-wide">
+                          Webpack, Rollup
+                        </div>
                       </li>
                     </ul>
                   </div>
                 </section>
 
                 <section className="flex flex-col gap-8">
-                  <p className="font-serif font-medium">Contact</p>
+                  <p className="font-medium">Contact</p>
                   <div className="flex flex-col items-start">
-                    <Button variant="link" asChild>
-                      <a
-                        href="https://github.com/yangevanss"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="p-0!"
-                      >
-                        Github
-                      </a>
-                    </Button>
                     <Button variant="link" asChild>
                       <a
                         href="mailto:yangevanss@gmail.com"
@@ -282,6 +310,16 @@ function App() {
                         yangevanss@gmail.com
                       </a>
                     </Button>
+                    <Button variant="link" asChild>
+                      <a
+                        href="https://github.com/yangevanss"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="p-0!"
+                      >
+                        Github
+                      </a>
+                    </Button>
                   </div>
                 </section>
               </div>
@@ -289,11 +327,6 @@ function App() {
           </div>
         </div>
       </ScrollArea>
-      <Dialog open={openKeynote} onOpenChange={setOpenKeynote}>
-        <DialogContent className="w-full! max-w-[90cqmax]! focus-visible:outline-none">
-          <Keynote></Keynote>
-        </DialogContent>
-      </Dialog>
     </>
   );
 }
