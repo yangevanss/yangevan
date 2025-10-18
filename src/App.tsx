@@ -91,7 +91,7 @@ function App() {
                       </li>
                       <li className="flex items-start gap-10">
                         <div className="text-muted-foreground before:bg-secondary flex w-1/7 shrink-0 items-start gap-4 text-sm font-medium whitespace-nowrap before:mt-1 before:block before:size-3 before:shrink-0 before:rounded-full before:border">
-                          2025
+                          2022
                         </div>
                         <div className="flex w-full flex-col gap-4">
                           <div className="flex flex-col items-start gap-2">
@@ -119,7 +119,7 @@ function App() {
                       </li>
                       <li className="flex items-start gap-10">
                         <div className="text-muted-foreground before:bg-secondary flex w-1/7 shrink-0 items-start gap-4 text-sm font-medium whitespace-nowrap before:mt-1 before:block before:size-3 before:shrink-0 before:rounded-full before:border">
-                          2022
+                          2020
                         </div>
                         <div className="flex w-full flex-col gap-4">
                           <div className="flex flex-col items-start gap-2">
