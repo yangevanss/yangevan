@@ -62,7 +62,7 @@ function App() {
                   <div className="relative">
                     <span className="bg-foreground/30 absolute top-1 left-1.5 z-[-1] h-full w-[1px] [mask-image:linear-gradient(to_bottom,#fff,#fff_60%,transparent_100%)]"></span>
                     <ul className="flex flex-col gap-8">
-                      <li className="flex items-start gap-10">
+                      {/* <li className="flex items-start gap-10">
                         <div className="text-muted-foreground before:bg-primary before:border-primary flex w-1/7 shrink-0 items-start gap-4 text-sm font-medium whitespace-nowrap before:mt-1 before:block before:size-3 before:shrink-0 before:rounded-full before:border">
                           Now
                         </div>
@@ -88,7 +88,7 @@ function App() {
                             </p>
                           </div>
                         </div>
-                      </li>
+                      </li> */}
                       <li className="flex items-start gap-10">
                         <div className="text-muted-foreground before:bg-secondary flex w-1/7 shrink-0 items-start gap-4 text-sm font-medium whitespace-nowrap before:mt-1 before:block before:size-3 before:shrink-0 before:rounded-full before:border">
                           2022
